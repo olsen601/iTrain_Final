@@ -1,0 +1,29 @@
+<h2>Your Profile</h2>
+
+{{#if username}}
+    <p>Hello, {{username}}.</p>
+{{/if}}
+
+<p>Member since {{signupDate}}</p>
+
+<p>Last weigh in:
+    {{#if userData.weight}}
+        {{userData.weight}}
+    {{else}}
+        No weight entered.
+    {{/if}}
+</p>
+
+<ul>
+    {{#each messages}}
+        <li>{{this}}</li>
+    {{/each}}
+</ul>
+
+<form action="weight" method="POST">
+    Current Weight: <input type="number" name="weight"> <br>
+    <input type="submit" name="updateWeight" value="Weight">
+</form>
+
+<a href="/logout">Log out</a>
+

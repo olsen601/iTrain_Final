@@ -1,0 +1,18 @@
+<h2>Welcome to iTrain</h2>
+
+<h3>Please login into your iTrain account</h3>
+
+<ul>
+    {{#each messages}}
+        <li>{{this}}</li>
+    {{/each}}
+</ul>
+
+<form method="POST" action="/login">
+    Username: <input name="username"/>
+    Password: <input type="password" name="password"/>
+
+    <input type="submit" value="Log In">
+</form>
+
+<p>New to iTrain? you can <a href="/signup">sign up here!</a></p>
